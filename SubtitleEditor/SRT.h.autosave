@@ -1,0 +1,24 @@
+#ifndef _SRT_H_
+#define _SRT_H_
+
+#include "SubtitleIO.h"
+
+class SRT : public SubtitleIO {
+protected:
+    virtual void processInputLine(Subtitles& subtitles, const string& line) throw(TimesOverlapException) override;
+    virtual const string processOutputLine(const Subtitles& subtitles) const throw(NoMoreSubtitlesException) override;
+
+private:
+
+    struct TimeStamps {
+        TimeStamp timeOfAppearance;
+        TimeStamp timeOfRemoval;
+    };
+
+
+    TimeStamps* processTimeStampLine(const string& line);
+};
+
+
+
+#endif

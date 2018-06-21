@@ -1,0 +1,13 @@
+#ifndef GLOBALVARIABLES_H
+#define GLOBALVARIABLES_H
+
+#include "SRT.h" 
+#include "MicroDVD.h"
+#include "MPlayer.h"
+
+#include <QString>
+
+QString inFilePath = nullptr;
+QString outFilePath = nullptr;
+
+#endif // GLOBALVARIABLES_H
